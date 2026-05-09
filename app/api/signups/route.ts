@@ -5,6 +5,15 @@ import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/prisma";
 import { classifyIdentifier, signupSchema } from "@/lib/validation";
 
+function isPrismaKnownRequestError(error: unknown): error is { code: string } {
+  return (
+    typeof error === "object" &&
+    error !== null &&
+    "code" in error &&
+    typeof (error as { code?: unknown }).code === "string"
+  );
+}
+
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
   const parsed = signupSchema.safeParse(body);
@@ -27,16 +36,30 @@ export async function POST(request: Request) {
   const requestHeaders = await headers();
   const passwordHash = await bcrypt.hash(parsed.data.password, 12);
 
-  await prisma.signupCredential.create({
-    data: {
-      identifier: parsed.data.identifier,
-      type: identifierType,
-      passwordHash,
-      displayName: parsed.data.displayName || null,
-      ipAddress: requestHeaders.get("x-forwarded-for")?.split(",")[0]?.trim() ?? null,
-      userAgent: requestHeaders.get("user-agent"),
-    },
-  });
+  try {
+    await prisma.signupCredential.create({
+      data: {
+        identifier: parsed.data.identifier,
+        type: identifierType,
+        passwordHash,
+        displayName: parsed.data.displayName || null,
+        ipAddress: requestHeaders.get("x-forwarded-for")?.split(",")[0]?.trim() ?? null,
+        userAgent: requestHeaders.get("user-agent"),
+      },
+    });
+  } catch (error) {
+    if (isPrismaKnownRequestError(error) && error.code === "P2021") {
+      return NextResponse.json(
+        {
+          error:
+            "The database tables have not been created yet. Run `npm run prisma:deploy` with your Neon database URL, then try again.",
+        },
+        { status: 503 },
+      );
+    }
+
+    throw error;
+  }
 
   return NextResponse.json({ ok: true });
 }

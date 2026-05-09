@@ -8,7 +8,7 @@ This project intentionally does **not** impersonate Instagram or expose user pas
 
 1. Copy `.env.example` to `.env`.
 2. Add your Neon pooled `DATABASE_URL` with `sslmode=require`.
-3. Optionally add a direct Neon `DIRECT_URL` for Prisma CLI commands such as migrations. If `DIRECT_URL` is omitted, Prisma falls back to `DATABASE_URL`.
+3. Optionally add `DIRECT_URL` for Prisma CLI operations; if omitted, the CLI falls back to `DATABASE_URL`.
 4. Set a long random `ADMIN_TOKEN`.
 5. Install dependencies:
 
@@ -22,7 +22,13 @@ This project intentionally does **not** impersonate Instagram or expose user pas
    npm run prisma:migrate
    ```
 
-7. Start development:
+7. Deploy migrations in production before accepting signups:
+
+   ```bash
+   npm run prisma:deploy
+   ```
+
+8. Start development:
 
    ```bash
    npm run dev
@@ -34,4 +40,9 @@ This project intentionally does **not** impersonate Instagram or expose user pas
 - Never ask users for credentials for a service you do not operate.
 - Keep `.env` out of version control.
 - Use a private, high-entropy `ADMIN_TOKEN` and rotate it regularly.
-- Prisma 7 keeps connection URLs in `prisma.config.ts`; the schema only declares the PostgreSQL provider.
+
+## Prisma 7 / Neon notes
+
+Prisma 7 reads datasource URLs from `prisma.config.ts`, not from `prisma/schema.prisma`. The app also creates `PrismaClient` with `@prisma/adapter-neon`, which is required by Prisma 7 for direct database connections.
+
+The production build script runs `prisma migrate deploy` before `next build` so Vercel can apply checked-in migrations, including the initial `SignupCredential` table migration. If you deploy from another platform, run `npm run prisma:deploy` once before users submit the signup form.
