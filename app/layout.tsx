@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Grand_Hotel } from 'next/font/google';
 
 export const metadata: Metadata = {
   title: "Social Access Portal",
@@ -15,21 +14,3 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   );
 }
 
-const grandHotel = Grand_Hotel({ 
-  weight: '400',
-  subsets: ['latin'],
-});
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      {/* This injects the font styles globally behind the scenes */}
-      <head>
-        <style dangerouslySetInnerHTML={{ __html: `
-          @import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
-        `}} />
-      </head>
-      <body>{children}</body>
-    </html>
-  );
-}
