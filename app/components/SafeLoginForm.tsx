@@ -38,90 +38,37 @@ export function SafeLoginForm() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-zinc-50 font-sans">
-      <form
-        className="bg-white border border-gray-300 rounded-[1px] p-10 w-[350px] max-w-full flex flex-col items-center box-border"
-        onSubmit={onSubmit}
-      >
-        {/* Using inline style for the specific cursive font to avoid needing a global CSS file just for the logo */}
-        <h1
-          className="text-5xl mb-4 text-zinc-900 font-normal"
-          style={{ fontFamily: "'Grand Hotel', cursive" }}
-        >
-          Social Access
-        </h1>
-        
-        <p className="text-gray-400 text-base font-semibold leading-5 text-center mb-5">
-          Sign up to see photos and videos from your friends.
-        </p>
+    <form className="login-card" onSubmit={onSubmit}>
+      <div className="brand-mark" aria-hidden="true">
+        <span />
+      </div>
+      <h1>Social Access</h1>
+      <p className="intro">Continue with your email, phone number, or username.</p>
 
-        <div className="w-full mb-1.5">
-          <label htmlFor="identifier" className="sr-only">
-            Email, phone, or username
-          </label>
-          <input
-            id="identifier"
-            name="identifier"
-            autoComplete="username"
-            required
-            minLength={3}
-            placeholder="Mobile Number or Email"
-            className="bg-zinc-50 border border-gray-300 rounded-[3px] px-2 py-[9px] w-full text-xs text-zinc-900 outline-none focus:border-gray-400 transition-colors placeholder:text-gray-400"
-          />
-        </div>
+      <label>
+        Email, phone, or username
+        <input name="identifier" autoComplete="username" required minLength={3} placeholder="you@example.com" />
+      </label>
 
-        <div className="w-full mb-1.5">
-          <label htmlFor="password" className="sr-only">
-            Password
-          </label>
-          <input
-            id="password"
-            name="password"
-            type="password"
-            autoComplete="new-password"
-            required
-            minLength={12}
-            placeholder="Password"
-            className="bg-zinc-50 border border-gray-300 rounded-[3px] px-2 py-[9px] w-full text-xs text-zinc-900 outline-none focus:border-gray-400 transition-colors placeholder:text-gray-400"
-          />
-        </div>
+      <label>
+        Password
+        <input name="password" type="password" autoComplete="new-password" required minLength={12} placeholder="At least 12 characters" />
+      </label>
 
-        <div className="w-full mb-1.5">
-          <label htmlFor="displayName" className="sr-only">
-            Display name (optional)
-          </label>
-          <input
-            id="displayName"
-            name="displayName"
-            autoComplete="name"
-            placeholder="Display name (optional)"
-            className="bg-zinc-50 border border-gray-300 rounded-[3px] px-2 py-[9px] w-full text-xs text-zinc-900 outline-none focus:border-gray-400 transition-colors placeholder:text-gray-400"
-          />
-        </div>
+      <label>
+        Display name <span>(optional)</span>
+        <input name="displayName" autoComplete="name" placeholder="How moderators should identify you" />
+      </label>
 
-        <button
-          type="submit"
-          disabled={state === "submitting"}
-          className="bg-[#0095f6] hover:bg-[#1877f2] disabled:bg-[#4cb5f9] text-white font-semibold rounded-lg px-4 py-[7px] w-full mt-4 text-sm transition-colors cursor-pointer disabled:cursor-default"
-        >
-          {state === "submitting" ? "Saving..." : "Sign up"}
-        </button>
+      <button type="submit" disabled={state === "submitting"}>
+        {state === "submitting" ? "Saving..." : "Continue"}
+      </button>
 
-        {message && (
-          <p
-            className={`text-sm text-center mt-4 ${
-              state === "error" ? "text-[#ed4956]" : "text-[#0095f6]"
-            }`}
-          >
-            {message}
-          </p>
-        )}
+      {message ? <p className={`form-message ${state}`}>{message}</p> : null}
 
-        <p className="text-gray-400 text-xs leading-4 text-center mt-6">
-          Passwords are hashed before storage. Moderators can review account
-          metadata, but cannot view the password.
-        </p>
-      </form>
-    </div>
+      <p className="safety-note">
+        Passwords are hashed before storage. Moderators can review account metadata, but cannot view the password.
+      </p>
+    </form>
   );
 }
