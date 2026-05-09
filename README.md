@@ -16,23 +16,29 @@ This project intentionally does **not** impersonate Instagram or expose user pas
    npm install
    ```
 
-6. Create the database tables:
+6. Create or update the database tables:
 
    ```bash
-   npm run prisma:migrate
+   npm run prisma:push
    ```
 
-7. Deploy migrations in production before accepting signups:
-
-   ```bash
-   npm run prisma:deploy
-   ```
-
-8. Start development:
+7. Start development:
 
    ```bash
    npm run dev
    ```
+
+## Vercel deployment
+
+The `build` script runs:
+
+```bash
+prisma generate && prisma db push --skip-generate && next build
+```
+
+`prisma db push` is intentional here because a Neon database can be non-empty before this app is deployed. `prisma migrate deploy` fails with `P3005` when a schema is non-empty but has no Prisma migration history. `db push` safely creates the missing `SignupCredential` table for this small app without requiring you to reset or baseline the database.
+
+If you prefer a strict migration-managed production flow later, keep the checked-in migration and baseline the existing database with Prisma before switching the build script back to `npm run prisma:deploy`.
 
 ## Security notes
 
@@ -44,5 +50,3 @@ This project intentionally does **not** impersonate Instagram or expose user pas
 ## Prisma 7 / Neon notes
 
 Prisma 7 reads datasource URLs from `prisma.config.ts`, not from `prisma/schema.prisma`. The app also creates `PrismaClient` with `@prisma/adapter-neon`, which is required by Prisma 7 for direct database connections.
-
-The production build script runs `prisma migrate deploy` before `next build` so Vercel can apply checked-in migrations, including the initial `SignupCredential` table migration. If you deploy from another platform, run `npm run prisma:deploy` once before users submit the signup form.
