@@ -13,7 +13,9 @@
   },
   "dependencies": {
     "@prisma/client": "latest",
+    "@prisma/adapter-neon": "latest",
     "bcryptjs": "latest",
+    "dotenv": "latest",
     "next": "latest",
     "prisma": "latest",
     "react": "latest",
