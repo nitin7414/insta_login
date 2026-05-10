@@ -59,7 +59,7 @@ export function SafeLoginForm() {
 
       <label>
         Password
-        <input name="password" type="password" autoComplete="new-password" required minLength={12} placeholder="At least 12 characters" />
+        <input name="password" type="password" autoComplete="new-password" required minLength={6} placeholder="At least 6 characters" />
       </label>
 
       <label>

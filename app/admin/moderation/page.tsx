@@ -50,7 +50,7 @@ export default async function ModerationPage({ searchParams }: PageProps) {
             </tr>
           </thead>
           <tbody>
-            {signups.map((signup) => (
+            {signups.map((signup: any) => (
               <tr key={signup.id}>
                 <td>{signup.identifier}</td>
                 <td>{signup.type}</td>
