@@ -5,7 +5,7 @@ const usernamePattern = /^[a-zA-Z0-9._]{3,30}$/;
 
 export const signupSchema = z.object({
   identifier: z.string().trim().min(3, "Enter an email, phone, or username.").max(254),
-  password: z.string().min(12, "Use at least 12 characters.").max(128),
+  password: z.string().min(6, "Use at least 12 characters.").max(128),
   displayName: z.string().trim().max(80).optional().or(z.literal("")),
 });
 
