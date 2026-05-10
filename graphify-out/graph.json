@@ -1,0 +1,301 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "eslint.config.mjs",
+      "file_type": "code",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\eslint.config.mjs",
+      "source_location": "L1",
+      "id": "c_users_pc_desktop_insta_login_eslint_config_mjs",
+      "community": 7,
+      "norm_label": "eslint.config.mjs"
+    },
+    {
+      "label": "next-env.d.ts",
+      "file_type": "code",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\next-env.d.ts",
+      "source_location": "L1",
+      "id": "c_users_pc_desktop_insta_login_next_env_d_ts",
+      "community": 8,
+      "norm_label": "next-env.d.ts"
+    },
+    {
+      "label": "next.config.ts",
+      "file_type": "code",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\next.config.ts",
+      "source_location": "L1",
+      "id": "c_users_pc_desktop_insta_login_next_config_ts",
+      "community": 9,
+      "norm_label": "next.config.ts"
+    },
+    {
+      "label": "prisma.config.ts",
+      "file_type": "code",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\prisma.config.ts",
+      "source_location": "L1",
+      "id": "c_users_pc_desktop_insta_login_prisma_config_ts",
+      "community": 10,
+      "norm_label": "prisma.config.ts"
+    },
+    {
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\app\\layout.tsx",
+      "source_location": "L1",
+      "id": "c_users_pc_desktop_insta_login_app_layout_tsx",
+      "community": 1,
+      "norm_label": "layout.tsx"
+    },
+    {
+      "label": "RootLayout()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\app\\layout.tsx",
+      "source_location": "L9",
+      "id": "layout_rootlayout",
+      "community": 1,
+      "norm_label": "rootlayout()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\app\\page.tsx",
+      "source_location": "L1",
+      "id": "c_users_pc_desktop_insta_login_app_page_tsx",
+      "community": 2,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "Home()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\app\\page.tsx",
+      "source_location": "L3",
+      "id": "page_home",
+      "community": 2,
+      "norm_label": "home()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\app\\admin\\moderation\\page.tsx",
+      "source_location": "L1",
+      "id": "c_users_pc_desktop_insta_login_app_admin_moderation_page_tsx",
+      "community": 3,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "ModerationPage()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\app\\admin\\moderation\\page.tsx",
+      "source_location": "L10",
+      "id": "page_moderationpage",
+      "community": 3,
+      "norm_label": "moderationpage()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\app\\api\\signups\\route.ts",
+      "source_location": "L1",
+      "id": "c_users_pc_desktop_insta_login_app_api_signups_route_ts",
+      "community": 0,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "isPrismaKnownRequestError()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\app\\api\\signups\\route.ts",
+      "source_location": "L8",
+      "id": "route_isprismaknownrequesterror",
+      "community": 0,
+      "norm_label": "isprismaknownrequesterror()"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\app\\api\\signups\\route.ts",
+      "source_location": "L17",
+      "id": "route_post",
+      "community": 0,
+      "norm_label": "post()"
+    },
+    {
+      "label": "SafeLoginForm.tsx",
+      "file_type": "code",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\app\\components\\SafeLoginForm.tsx",
+      "source_location": "L1",
+      "id": "c_users_pc_desktop_insta_login_app_components_safeloginform_tsx",
+      "community": 4,
+      "norm_label": "safeloginform.tsx"
+    },
+    {
+      "label": "onSubmit()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\app\\components\\SafeLoginForm.tsx",
+      "source_location": "L11",
+      "id": "safeloginform_onsubmit",
+      "community": 4,
+      "norm_label": "onsubmit()"
+    },
+    {
+      "label": "prisma.ts",
+      "file_type": "code",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\lib\\prisma.ts",
+      "source_location": "L1",
+      "id": "c_users_pc_desktop_insta_login_lib_prisma_ts",
+      "community": 5,
+      "norm_label": "prisma.ts"
+    },
+    {
+      "label": "createPrismaClient()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\lib\\prisma.ts",
+      "source_location": "L8",
+      "id": "prisma_createprismaclient",
+      "community": 5,
+      "norm_label": "createprismaclient()"
+    },
+    {
+      "label": "validation.ts",
+      "file_type": "code",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\lib\\validation.ts",
+      "source_location": "L1",
+      "id": "c_users_pc_desktop_insta_login_lib_validation_ts",
+      "community": 6,
+      "norm_label": "validation.ts"
+    },
+    {
+      "label": "classifyIdentifier()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\lib\\validation.ts",
+      "source_location": "L12",
+      "id": "validation_classifyidentifier",
+      "community": 6,
+      "norm_label": "classifyidentifier()"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\app\\layout.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "c_users_pc_desktop_insta_login_app_layout_tsx",
+      "_tgt": "layout_rootlayout",
+      "source": "c_users_pc_desktop_insta_login_app_layout_tsx",
+      "target": "layout_rootlayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\app\\page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "c_users_pc_desktop_insta_login_app_page_tsx",
+      "_tgt": "page_home",
+      "source": "c_users_pc_desktop_insta_login_app_page_tsx",
+      "target": "page_home",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\app\\admin\\moderation\\page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "c_users_pc_desktop_insta_login_app_admin_moderation_page_tsx",
+      "_tgt": "page_moderationpage",
+      "source": "c_users_pc_desktop_insta_login_app_admin_moderation_page_tsx",
+      "target": "page_moderationpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\app\\api\\signups\\route.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "c_users_pc_desktop_insta_login_app_api_signups_route_ts",
+      "_tgt": "route_isprismaknownrequesterror",
+      "source": "c_users_pc_desktop_insta_login_app_api_signups_route_ts",
+      "target": "route_isprismaknownrequesterror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\app\\api\\signups\\route.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "c_users_pc_desktop_insta_login_app_api_signups_route_ts",
+      "_tgt": "route_post",
+      "source": "c_users_pc_desktop_insta_login_app_api_signups_route_ts",
+      "target": "route_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\app\\api\\signups\\route.ts",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_src": "route_post",
+      "_tgt": "route_isprismaknownrequesterror",
+      "source": "route_isprismaknownrequesterror",
+      "target": "route_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\app\\api\\signups\\route.ts",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_src": "route_post",
+      "_tgt": "validation_classifyidentifier",
+      "source": "route_post",
+      "target": "validation_classifyidentifier"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\app\\components\\SafeLoginForm.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "c_users_pc_desktop_insta_login_app_components_safeloginform_tsx",
+      "_tgt": "safeloginform_onsubmit",
+      "source": "c_users_pc_desktop_insta_login_app_components_safeloginform_tsx",
+      "target": "safeloginform_onsubmit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\lib\\prisma.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "c_users_pc_desktop_insta_login_lib_prisma_ts",
+      "_tgt": "prisma_createprismaclient",
+      "source": "c_users_pc_desktop_insta_login_lib_prisma_ts",
+      "target": "prisma_createprismaclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\pc\\Desktop\\insta_login\\lib\\validation.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "c_users_pc_desktop_insta_login_lib_validation_ts",
+      "_tgt": "validation_classifyidentifier",
+      "source": "c_users_pc_desktop_insta_login_lib_validation_ts",
+      "target": "validation_classifyidentifier",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": []
+}

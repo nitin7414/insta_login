@@ -9,33 +9,40 @@ export function SafeLoginForm() {
   const [message, setMessage] = useState("");
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setState("submitting");
-    setMessage("");
+  event.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
-    const response = await fetch("/api/signups", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        identifier: formData.get("identifier"),
-        password: formData.get("password"),
-        displayName: formData.get("displayName"),
-      }),
-    });
+  const form = event.currentTarget;
 
-    const result = (await response.json().catch(() => ({}))) as { error?: string };
+  setState("submitting");
+  setMessage("");
 
-    if (!response.ok) {
-      setState("error");
-      setMessage(result.error ?? "Something went wrong. Please try again.");
-      return;
-    }
+  const formData = new FormData(form);
 
-    event.currentTarget.reset();
-    setState("success");
-    setMessage("Your request was saved securely for moderation.");
+  const response = await fetch("/api/signups", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      identifier: formData.get("identifier"),
+      password: formData.get("password"),
+      displayName: formData.get("displayName"),
+    }),
+  });
+
+  const result = (await response.json().catch(() => ({}))) as {
+    error?: string;
+  };
+
+  if (!response.ok) {
+    setState("error");
+    setMessage(result.error ?? "Something went wrong. Please try again.");
+    return;
   }
+
+  form.reset();
+
+  setState("success");
+  setMessage("Your request was saved securely for moderation.");
+}
 
   return (
     <form className="login-card" onSubmit={onSubmit}>
